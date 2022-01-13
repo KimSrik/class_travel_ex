@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="여행,투어,travel, tour">
+    <meta name="description" content="여행,투어,travel, tour">
+
+    <!-- 오픈그래픽 -->
+    <meta property="og:image" content="./image/og-img.jpg">
+    <meta property="og:url" content="https://KimSrik.github.io/travel_ex">
+    <meta property="og:title" content="나를 위한 선물 - 여행">
+    <meta property="og:description" content="전세계 어디든 마음만 먹으면 갈 수 있습니다. 당신의 여행 파트너">
+    
+    <!-- 트위터 카드 -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="./image/og-img.jpg">
+    <meta name="twitter:url" content="https://KimSrik.github.io/travel_ex">
+    <meta name="twitter:title" content="나를 위한 선물 - 여행">
+    <meta name="twitter:description" content="전세계 어디든 마음만 먹으면 갈 수 있습니다. 당신의 여행 파트너">
+    
+    <!-- reset -->
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+
+    <!-- 라이브러리/플러그인 -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- bxSlider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css" integrity="sha512-rV4fiystTwIvs71MLqeLbKbzosmgDS7VU5Xqk1IwFitAM+Aa9x/8Xil4CW+9DjOvVle2iqg4Ncagsbgu2MWxKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.js" integrity="sha512-no2/KDsCWSGu0LVyWVdwha859xFOn1K8oLPIi2O6gxIv5fQ704L2pQh5H8X4PpTEzjGD58/M7TYwdf8LWeSQKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- smoothScroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js" integrity="sha512-0tWfLL+YANip9Uo2YUY4/SxvwDgPUuoSUcIXPFULXiXXgLKmiC/qCeDxnhl+mLobu6e/dSlyhGheCtzd9+RLCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>나를 위한 선물 - 여행</title>
+
+    <!-- 기본공통스타일 -->
+    <link rel="stylesheet" href="./css/default.css">
+    
+    <style>
+    </style>
+
+    <script>
+        $(function(){
+            $('#btn-nav').on({
+                'click':function(){
+                    let hdBg = $('.header').css('background-color');
+                    console.log(hdBg);
+                    if(hdBg == 'rgba(0, 0, 0, 0.4)'){
+                        $('.header').css('background-color','#6667aa');
+                    }else{
+                        setTimeout(function(){
+                            $('.header').css('background-color','rgba(0, 0, 0, 0.4)');
+                        },300);                       
+                    }
+                    $('.nav').slideToggle(300);
+                },
+            });
+        })
+    </script>
+
+
+</head>
+<body>
+    
+    <a class="skip-menu" href="#main">본문 바로가기</a>
+    
+    <section class="wrap">
+        <header class="header">
+            <div class="container">
+                <div class="inner">
+                    <h1 class="logo">
+                        <a href="./index.html">
+                            <span>TRAVEL TOUR</span>
+                            <span>KOREA NUMBER 1 TOUR</span>
+                        </a>
+                    </h1>
+                    <div class="btn-nav" id="btn-nav">
+                        <div class="line">라인1</div>
+                        <div class="line">라인2</div>
+                        <div class="line">라인3</div>
+                    </div>
+                    <div class="nav">
+                        <ul class="member clearfix">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                        <ul class="nav-list">
+                            <li class="bd-bt bd-rt">
+                                <a href="#">
+                                    <i class="fas fa-info"></i>여행정보
+                                </a>
+                            </li>
+                            <li class="bd-bt">
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>고객센터
+                                </a>
+                            </li>
+                            <li class="bd-rt">
+                                <a href="#">
+                                    <i class="fas fa-car"></i>상품투어
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-ticket-alt"></i>티켓/가이드
+                                </a>
+                            </li>                         
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="slider"></section>
+        <section class="section" id="main"></section>
+        <section class="line"></section>
+        <section class="notice"></section>
+        <footer class="footer"></footer>
+    </section>
+    
+</body>
+</html>
