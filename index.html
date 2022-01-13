@@ -41,29 +41,64 @@
 
     <!-- 기본공통스타일 -->
     <link rel="stylesheet" href="./css/default.css">
+
+    <!-- 기본공통스크립트-->
+    <script src="./js/default.js"></script>
+
     
     <style>
-    </style>
+        .main-slider{
+            margin-bottom: 23px;
+        }
+        .bx-wrapper{
+            margin-bottom: 0;
+            border: none;
+        }
+        .bx-wrapper .bx-controls-direction a{
+            display: none;
+            background-color: #999;
+        }
+        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+            padding: 0;
+            bottom: 16px;
+            right: 16px;
+            width: auto;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            margin-right: 0;
+        }     
+        
+        .sec-tit, .section article{
+            margin-bottom: 23px;
+        }
+        .sec-tit h2{
+            margin-bottom: 7px;
+            font-weight: 300;
+            font-size: 20px;
+            text-align: center;
+        }
+        .section article .img-box{
+            margin-bottom: 8px;
+        }
+        .section article p{
+            text-align: center;
+            line-height: 24px;
+        }
 
+        .line{
+            height: 1px;
+            margin-bottom: 27px;
+            background-color: #444;
+        }
+
+
+    </style>
+    
     <script>
         $(function(){
-            $('#btn-nav').on({
-                'click':function(){
-                    let hdBg = $('.header').css('background-color');
-                    console.log(hdBg);
-                    if(hdBg == 'rgba(0, 0, 0, 0.4)'){
-                        $('.header').css('background-color','#6667aa');
-                    }else{
-                        setTimeout(function(){
-                            $('.header').css('background-color','rgba(0, 0, 0, 0.4)');
-                        },300);                       
-                    }
-                    $('.nav').slideToggle(300);
-                },
-            });
-        })
+            $('.slider').bxSlider();
+        })        
     </script>
-
 
 </head>
 <body>
@@ -71,7 +106,7 @@
     <a class="skip-menu" href="#main">본문 바로가기</a>
     
     <section class="wrap">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="inner">
                     <h1 class="logo">
@@ -116,12 +151,73 @@
                 </div>
             </div>
         </header>
-        <section class="slider"></section>
-        <section class="section" id="main"></section>
+        <section class="main-slider">
+            <div class="slider">
+                <div><a href="#"><img src="./images/slide01.jpg" alt="여행경비 30% 할인"></a></div>
+                <div><a href="#"><img src="./images/slide02.jpg" alt="2+1 둘이 모이면 한명은 공짜"></a></div>
+                <div><a href="#"><img src="./images/slide03.jpg" alt="위드코로나로 인한 특별 할인"></a></div>
+            </div>
+        </section>
+        <section class="section" id="main">
+            <div class="container">
+                <div class="sec-tit">
+                    <h2>다시 찾는 인기 여행지</h2>
+                    <h3 class="sm-tit">TOP3</h3>
+                </div>
+                <article class="art01">
+                    <div class="img-box"><a href="#"><img src="./images/best01.jpg" alt="첨성대"></a></div>
+                    <h3 class="sm-tit">경주 첨성대</h3>
+                    <p>첨성대는 천년고도 경주에서 있는 천문 관측시설 또는 하늘에 제사를 지내던 것으로 생각되는 건축물로써 그 모양이 실로 묘하다.</p>
+                </article>
+                <article class="art02">
+                    <div class="img-box"><a href="#"><img src="./images/best02.jpg" alt="런던 브릿지"></a></div>
+                    <h3 class="sm-tit">런던 브릿지</h3>
+                    <p>해가 지지않는 대영제국의 수도 런던 템즈강에 위치한 다리로 배가 지나가면 들어 올려진다. 스타이더멘등의 영화 촬영장으로도 유명하다.</p>
+                </article>
+                <article class="art03">
+                    <div class="img-box"><a href="#"><img src="./images/best03.jpg" alt="이집트 피라미드"></a></div>
+                    <h3 class="sm-tit">이집트 피라미드</h3>
+                    <p>세계 4대 문명지인 아프리카의 이집트 고왕조 시대의 전축물로써 위대한 파라오의 무덤이라는 설과 외계인이 내려와서 건설한 안테라나는 말도 있다.</p>
+                </article>
+            </div>
+        </section>
         <section class="line"></section>
-        <section class="notice"></section>
-        <footer class="footer"></footer>
+        <section class="notice">
+            <div class="container">
+                <h2 class="sm-tit">공지사항</h2>
+                <ul class="notice-list">
+                    <li><a href="#">· 항공 앱 & 호텔 앱 서비스 통합 안내</a></li>
+                    <li><a href="#">· 오미크론 변이 관련 취소료 규정 변경 공지</a></li>
+                    <li><a href="#">· 투어/입장권 시스템 점검에 따른 이용제한 안내</a></li>
+                    <li><a href="#">· 아에로멕시코(AM) 미 파산 법원 청구 증명 신청에 대한 수수료 및 즉시 발급안내</a></li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <strong><a href="#">이용약관</a><a href="#">개인정보처리방침</a></strong>
+                <address>
+                    투어리스트 트레벌
+                    <br>
+                    인천광역시 서구 연희동 연후희로 1-1
+                    <br>
+                    E-mail : pam7461@gmail.com
+                    <br>
+                    만든이 : 홍길동
+                </address>
+                <div class="sns">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </div>
+                <div class="move-top">
+                    <a href="#header"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </footer>
     </section>
+    
     
 </body>
 </html>
